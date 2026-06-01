@@ -26,15 +26,44 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 /* write all the steps invloved */
 
+```
+1.Open Quartus software and create a new project.
+2.Write the Verilog code for the 4-bit ripple counter.
+3.Compile the design and assign input/output pins.
+4.Run simulation to check the counting output.
+5.Program the FPGA board and observe the result.
+```
+
 **PROGRAM**
+```
+module exp6de(
+    input clk,
+    input rst,
+    output reg [3:0] count
+);
 
+always @(posedge clk or posedge rst)
+begin
+    if (rst)
+        count <= 4'b0000;
+    else
+        count <= count + 1'b1;
+end
+
+endmodule
+```
 /* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
-
- Developed by: RegisterNumber:
+```
+ Developed by: KOPIGA N
+ RegisterNumber: 212225220053
+```
 */
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
+<img width="1352" height="806" alt="image" src="https://github.com/user-attachments/assets/3ff539d0-0634-408e-93ed-5970cee802bb" />
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
+<img width="1390" height="745" alt="image" src="https://github.com/user-attachments/assets/f616c82b-8b4c-4e81-b218-ca1cbfc0a5a9" />
 
 **RESULTS**
+Thus, the 4-BIT-RIPPLE-COUNTER successfully designed and verified using Quartus software.
